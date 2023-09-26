@@ -3,7 +3,7 @@ body, h1, h2, h3, ul, p {
     padding: 0;
 }
 
-/* Add a background color and some padding to the page */
+/* background color */
 body {
     font-family: Arial, sans-serif;
     background-color: #faf9f5;
@@ -12,7 +12,7 @@ body {
     padding: 20px;
 }
 
-/* Header styles */
+/* header styles */
 h1 {
     color: #d2691e;
     font-family: 'Pacifico', cursive;
@@ -22,19 +22,19 @@ h1 {
 }
 
 
-/* Sub-header styles */
+/* sub-header styles */
 h2, h3 {
     margin-top: 20px;
     color: #6d4e1e;
 }
 
-/* List styles */
+/* list styles */
 ul, ol {
     margin: 10px 0 20px 20px;
     color: #4d321e;
 }
 
-/* Paragraph styles */
+/* paragraph styles */
 p {
     font-size: 1.1em;
     line-height: 1.6;
@@ -42,22 +42,22 @@ p {
     color: #4d321e;
 }
 
-/* Tips section */
+/* tips green */
 h3 + ul {
     color: green;
 }
 
-/* Add some rounded corners to all images */
 img {
     border-radius: 8px;
 }
 
-/* Add some space between text and the edges of the page */
 .container {
-    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    padding-top: 10px;
 }
 
-/* Bonus: add a class for a highlighted tip */
+/*highlight*/
 .highlight-tip {
     background-color: #ffe699;
     padding: 10px;
@@ -65,16 +65,17 @@ img {
 }
 
 .content-box {
-    background-color: #ffffff; /* White background */
-    margin: auto; /* Center the box */
-    padding: 20px; /* Add some space inside the box */
-    width: 80%; /* Set the width of the box */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    background-color: #ffffff; 
+    margin: auto; 
+    padding: 20px; 
+    width: 80%;
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 .hidden-checkbox {
     display: none;
 }
+/*Ingredient*/
 
 .ingredient-box, .instruction-box {
     box-sizing: border-box;
@@ -91,7 +92,7 @@ img {
 
 }
 
-.ingredient-box::after, .instruction-box::after { /* After clicking */
+.ingredient-box::after, .instruction-box::after { /*clicking effect*/
     content: "";
     position: absolute;
     top: 50%;
@@ -109,51 +110,88 @@ img {
 }
 
 .ingredient-section {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .ingredients-list {
-    flex: 1;
+    flex-grow: 1; 
+    flex-shrink: 1; 
+    flex-basis: 50%; 
     margin-right: 20px;
-  }
+    padding: 0 20px; 
+}
+  .additional-sections {
+    margin-top: 35px; 
+
+
+    text-align: center;
+}
+
+.additional-sections li {
+    list-style-position: inside;
+    color: green;
+
+}
   
-  .ingredient-image {
-    flex: 0;
+  .ingredient-image, .instruction-image {
+    width: 700px; 
+    height: 450px; 
     display: flex;
-  justify-content: center; 
-  align-items: center;
-  }
-  
-  .ingredient-image img {
-    max-width: 800px;  
-  }
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    position: relative;
+}
+.ingredient-image img, .instruction-image img {
+    object-fit: cover; 
+    width: 100%;
+}
+
 
 /*Instructions*/
+
+
 .instruction-section {
-    display: flex;
-    justify-content: space-between;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+    margin: 0 20px;
 }
+
 
 .instruction-list {
     flex: 1;
-    margin-right: 20px;  /* Add some space between the text and the image */
 }
 
-.instruction-image {
-    flex: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.instruction-image img {
-    max-width: 300px;  /* Adjust the image size */
-}
 
 ol li {
-    border: 1px solid #ccc; /* Add border */
-    padding: 10px;          /* Add some padding */
-    margin-bottom: 10px;    /* Add some margin to the bottom */
+    border: none; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    width: 100%; 
+    position: relative; 
+}
+
+ol li::after {
+    content: ""; 
+    display: block; 
+    height: 1px; 
+    background: #ccc; 
+    margin-top: 10px;
 }
   
+.image-above-title img {
+    display: block;
+    margin: 0 auto 20px auto; 
+    max-width: 100%; 
+}
+.column-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+figcaption {
+    text-align: center; 
+    font-size: 0.6em; 
+    color: #666; 
+}
+
